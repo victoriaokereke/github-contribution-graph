@@ -1,0 +1,19 @@
+p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    text-align: center;
+    color: #2c2c2c;
+
+}
+
+.header {
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.input-and-generate {
+    display: grid;
+    grid-template-columns: 40fr 1fr;
+}
