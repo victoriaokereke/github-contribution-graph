@@ -9,6 +9,16 @@ import re
 
 
 flask_app = Flask(__name__) #creates a flask application object that creates a server when the app runs. It also creates a url that the server listens to 
+# CORS(
+#     flask_app,
+#     resources={
+#         r"/contributions/.*": {
+#             "origins": ["http://127.0.0.1:5500"]
+#         }
+#     }
+# )
+
+CORS(flask_app) # cross origin resource sharing - allows flask server to permit the cross origin request that js is making (js and flask use different url ports which flags the 'same origin policy)
 @flask_app.route("/contributions/<username>") #adds a route to the server url - so js will send an http request to that url, flask takes the username out of that url and use it to run the function
 
 

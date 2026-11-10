@@ -1,9 +1,59 @@
-p {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 20px;
-    text-align: center;
-    color: #2c2c2c;
 
+/* creating a root color for the whole page */
+:root {
+    --background-colour: white;
+    --text-colour: #2c2c2c;
+    --grid-background: #eeeeee;
+    --level-1: rgba(0, 128, 0, 0.2);
+    --level-2: rgba(0, 128, 0, 0.4);
+    --level-3: rgba(0, 128, 0, 0.6);
+    --level-4: rgba(0, 128, 0, 1.0);
+    --border-colour: #e4e4e4;
+    --cell-colour: #4b4b4b;
+    --icon-colour: #2c2c2c;
+    --empty-cell: #57575718;
+    --contribution-container-colour: #ebebeb;
+
+}
+
+
+/* making a dark mode class for the body element */
+.dark-mode { 
+    --background-colour: black;
+    --text-colour: #f3f3f3;
+    --grid-background: #2c2c2c;
+    --level-1: rgba(0, 128, 0, 0.2);
+    --level-2: rgba(0, 128, 0, 0.4);
+    --level-3: rgba(0, 128, 0, 0.6);
+    --level-4: rgba(0, 128, 0, 1.0);
+    --border-colour: #4b4b4b;
+    --cell-colour: #4b4b4b;
+    --icon-colour: #f3f3f3;
+    --empty-cell: #cfcbcb18;
+    --contribution-container-colour: #3c3c3c;
+
+}
+
+
+
+
+
+
+body {
+    background-color: var(--background-colour);
+    font-family: 'Satoshi', sans-serif;
+    font-weight: 400;
+    margin-inline: 40px;
+
+}
+
+p {
+    font-family: inherit;
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+    color: var(--text-colour);
+    padding-left: 10px;
 }
 
 .header {
@@ -15,5 +65,159 @@ p {
 
 .input-and-generate {
     display: grid;
-    grid-template-columns: 40fr 1fr;
+    grid-template-columns: 20fr 1fr;
 }
+
+
+#username { 
+    appearance: none;
+    border-radius: 20px;
+    border-width: 1.5px;
+    border-color: var(--border-colour);
+    border-style: solid;
+    padding-inline: 20px;
+    /* margin-inline: 20px; */
+}
+
+
+#add-new-graph {
+    background-color: var(--background-colour);
+    border-radius: 5px;
+    border-width: 0px;
+    border-style: solid;
+    color: var(--icon-colour);
+}
+
+
+#settings {
+    background-color: var(--background-colour);
+    border-radius: 5px;
+    border-width: 0px;
+    border-style: solid;
+    color: var(--icon-colour);
+
+}
+
+#generate-graph {
+    background-color: var(--background-colour);
+    border-radius: 20px;
+    border-width: 0px;
+    border-color: var(--border-colour);
+    color: var(--icon-colour);
+    border-style: solid;
+}
+
+.hidden {
+    display: none;
+}
+
+
+#weekday-labels {
+    font-family: monospace;
+    font-size: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+    justify-content: center;
+    height: 185px;
+}
+
+span {
+    color: var(--text-colour);
+}
+
+
+.empty-cell {
+    background-color: var(--empty-cell);
+    height: 20px;
+    width: 20px;
+}
+
+
+#contribution-container {
+    height: 185px;
+    width: 800px;
+    justify-self: center;
+    align-self: center;
+    display: flex;
+    flex-direction: row;
+    background-color: var(--contribution-container-colour);
+    padding: 10px 10px;
+    border-radius: 15px;
+    border-color: var(--border-colour);
+    border-width: 1.5px;
+    border-style: solid;
+    margin-top: 30px;
+    gap: 10px;    
+}
+
+
+#contribution-grid {
+    height: 185px;
+    width: 800px;
+    display: grid;
+    background-color: var(--grid-background);
+    grid-template-rows: repeat(7, 20px);
+    grid-auto-flow: column;
+    gap: 5px;
+    /* overflow-x: auto; */
+    border-radius: 10px;
+    border-color: var(--border-colour);
+    border-width: 1.5px;
+    border-style: solid;
+    align-content: center;
+    padding: 0px 10px;
+}
+
+/* #contribution-grid::-webkit-scrollbar {
+    display: none;
+    height: 0px;
+} */
+
+
+#month-labels-and-contrib-grid {
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+
+#month-labels-and-contrib-grid::-webkit-scrollbar {
+    display: none;
+    height: 0px;
+    width: 0px;
+}
+
+[data-level = "0"] {
+    height: 20px;
+    width: 20px;
+    background-color: transparent;
+    border-radius: 2px;
+}
+
+[data-level = "1"] {
+    height: 20px;
+    width: 20px;
+    background-color: var(--level-1);
+    border-radius: 2px;
+}
+
+[data-level = "2"] {
+    height: 20px;
+    width: 20px;
+    background-color: var(--level-2);
+    border-radius: 2px;
+}
+
+[data-level = "3"] {
+    height: 20px;
+    width: 20px;
+    background-color: var(--level-3);
+    border-radius: 2px;
+}
+
+[data-level = "4"] {
+    height: 20px;
+    width: 20px;
+    background-color: var(--level-4);
+    border-radius: 2px;
+}
+
