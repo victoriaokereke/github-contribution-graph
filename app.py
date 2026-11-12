@@ -77,6 +77,7 @@ def get_contributions(username):
         }
 
         yearly_contributions.append(daily_contribution_count)
+        yearly_contributions.sort(key=lambda x: x["date"]) # .sort() returns none so I can't pass it straight into jsonify. Creating a small function to retrieve the date of each dictionary and sorting the using the dates.
 
     return jsonify(yearly_contributions)
 

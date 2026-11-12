@@ -1,46 +1,53 @@
 
 /* creating a root colour for the whole page */
 :root {
-    --background-colour: #f9f9f9;
-    --text-colour: #000000cd;
-    --primary-font: 'Switzer', sans-serif;
-    --secondary-font: monospace;
-    --grid-background: rgba(245, 245, 245, 0.774);
+    --background-colour: #e9ecef;
+    --text-colour: #212529;
+    --primary-font: "Inter", sans-serif;
+    --secondary-font: "JetBrains Mono", monospace;
+    --grid-background: #f8f9fa;
     --level-1: rgba(0, 128, 0, 0.2);
     --level-2: rgba(0, 128, 0, 0.4);
     --level-3: rgba(0, 128, 0, 0.6);
     --level-4: rgba(0, 128, 0, 1.0);
-    --border-colour: white;
-    --cell-colour: #4b4b4b;
-    --icon-colour: #2c2c2c;
-    --contribution-cell: #0e0e0e18;
-    --contribution-container-colour: rgb(245, 245, 245);
-    --search-bar: white;
-    --cell-hover: red;
+    --border-colour: #ced4da;
+    --cell-colour: #ced4da;
+    --icon-colour: #212529;
+    --contribution-cell: #e9ecef;
+    --week-month-grid-colour: #f8f9fa;
+    --search-bar: #f8f9fa;
+    --cell-hover: #d90429;
     --tooltip-background: #f9f9f9;
-    --tooltip-text: #000000cd;
+    --tooltip-text: #212529;
+    --shadow: #2c2c2c0f;
+    --header: #f8f9fa;
+    --logo-colour:#008000;
+    --hover: #046d0052;
 
 }
 
 
 /* making a dark mode class for the body element */
 .dark-mode { 
-    --background-colour: rgb(29, 29, 29);
+    --background-colour: #020202;
     --text-colour: #f3f3f3b0;
-    --grid-background: #181818;
+    --grid-background: #151515;
     --level-1: rgba(0, 128, 0, 0.2);
     --level-2: rgba(0, 128, 0, 0.4);
     --level-3: rgba(0, 128, 0, 0.6);
     --level-4: rgba(0, 128, 0, 1.0);
-    --border-colour: #71717112;
-    --cell-colour: #2e2e2eae;
+    --border-colour: #2729303a;
     --icon-colour: #f3f3f3b2;
     --contribution-cell: #3e3e3e25;
-    --contribution-container-colour: #131313;
-    --search-bar: #2c2c2c;
+    --week-month-grid-colour: #0e0e0e;
+    --search-bar: #151515;
     --cell-hover: red;
     --tooltip-background: rgb(29, 29, 29);
     --tooltip-text: #f3f3f3b0;
+    --shadow: #2c2c2c4a;
+    --header: #0000;
+    --logo-colour:#008000;
+    --hover: #141414;
 
 }
 
@@ -49,42 +56,68 @@ body {
     background-color: var(--background-colour);
     font-family: var(--secondary-font);
     font-weight: 400;
-    margin-inline: 40px;
+    margin: 0;
 }
 
 
-p {
+p.name {
     font-family: var(--primary-font);
-    margin: 0;
-    font-size: 25px;
-    font-weight: 650;
-    text-align: center;
+    font-size: 4vh;
+    font-weight: 800;
     color: var(--text-colour);
-    padding: 8px 0px 0px 0px;
+    flex: 1;
+    align-content: center;
+    justify-items: center;
+    padding: 0;
+    margin: 0 0 0 1vh;
+}
+
+.soup {
+    padding: 0;
+    margin: 0;
+    flex: 0 0 auto;
+    fill: var(--logo-colour);
 }
 
 
 .header {
+    min-height: clamp(60px, 10vh, 100px);
+    background-color: var(--header);
     display:flex;
     flex-direction:row;
     justify-content:space-between;
     align-items:center;
-
+    border-width: 0 0 1px 0;
+    border-style: solid;
+    border-color: var(--border-colour);
+    border-radius: 10px;
+    box-shadow: 0px 7px 30px var(--shadow);
+    padding:  3vh 10vw;
 }
+
+
+
+
 
 #logo {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items:center;
-    row-gap: 2px;
-    margin: 10px 0px 30px 0px;
-
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content:center;
+    justify-items:center;
+    padding: 0;
+    margin: 0;
 }
 
+#graph-section {
+    margin-inline: 5vw;
+}
 
 .input-and-generate {
     display: grid;
     grid-template-columns: 20fr 1fr;
+    margin: 6vh 12vw 0;
+    gap: 5px;
 }
 
 
@@ -96,44 +129,63 @@ p {
     border-width: 1px;
     border-color: var(--border-colour);
     border-style: solid;
-    padding-inline: 20px;
-    box-shadow: 1px 1px 17px rgba(0, 0, 0, 0.087);
+    padding: 0 20px;
+    box-shadow: 0px 0px 10px var(--shadow);
     color: var(--text-colour);
     background-color: var(--search-bar);
-    /* margin-inline: 20px; */
+
 }
 
 #username::placeholder { 
     font-family: inherit;
-    font-size: 10px;
+    font-size: 12px;
     color: #999999;
 }
 
+
 #light-dark {
-    background-color: var(--background-colour);
-    border-radius: 5px;
+    background-color: transparent;
+    border-radius: 10px;
     border-width: 0px;
     border-style: solid;
     color: var(--icon-colour);
+    padding: 10px 15px;
 }
 
 
 #settings {
-    background-color: var(--background-colour);
-    border-radius: 5px;
+    background-color: transparent;
+    border-radius: 10px;
     border-width: 0px;
     border-style: solid;
     color: var(--icon-colour);
-
+    padding: 10px 15px;
 }
 
+
+#generate-graph:hover {
+    background-color: var(--hover);
+}
+
+
+#light-dark:hover {
+    background-color: var(--hover);
+}
+
+#settings:hover {
+    background-color: var(--hover);
+}
+
+
 #generate-graph {
-    background-color: var(--background-colour);
-    border-radius: 20px;
+    background-color: transparent;
+    border-radius: 13px;
     border-width: 0px;
     border-color: var(--border-colour);
     color: var(--icon-colour);
     border-style: solid;
+    padding: 10px 15px;
+    margin: 0px;
 }
 
 
@@ -147,46 +199,64 @@ p {
 
 #weekday-labels {
     font-family: inherit;
+    font-weight: 400;
     font-size: 10px;
     display: flex;
     flex-direction: column;
-    gap: 13px;
+    gap: 7px;
     justify-content: center;
-    height: 185px;
-    margin-top: 20px;
+    height: 60%;
+    margin: 45px 10px 0 20px;
+    color: var(--text-colour);
 }
 
-span {
+
+span.weekday {
     color: var(--text-colour);
 }
 
 
 .logo-text {
     font-family: inherit;
-    font-size: 8px;
+    font-size: 1.5vh;
     color: var(--text-colour);
     grid-column: 1 / 3;
+    margin-top: 0.5vh;
+    flex-basis: 100%;
 
 }
 
+#contribution-number {
+    color: var(--level-4)
+}
 
 #contribution-container {
     height: 100%;
-    width: 100%;
+    width: 80%;
     justify-self: center;
     align-self: center;
     display: flex;
-    flex-direction: row;
-    background-color: var(--contribution-container-colour);
-    padding: 10px 10px;
+    flex-direction: column;
+    background-color: var(--week-month-grid-colour);
+    box-shadow: 0px 0px 20px var(--shadow);
+    margin-top: 30px;
     border-radius: 15px;
     border-color: var(--border-colour);
     border-width: 1px;
     border-style: solid;
-    margin-top: 30px;
+    padding: 10px 10px;
     gap: 10px;   
-    box-shadow: 3px 3px 18px rgba(0, 0, 0, 0.103); 
 }
+
+
+#week-month-grid {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    background-color: transparent;
+}
+
 
 .contribution-cell:hover {
     background-color: var(--cell-hover);
@@ -199,49 +269,71 @@ span {
     background-color: var(--tooltip-background);
     color: var(--tooltip-text);
     font-family: inherit;
+    font-size:x-small;
     border-radius: 5px;
     border-width: 1px;
     border-color: var(--border-colour);
     border-style: solid;
-    position: fixed;
     padding: 5px 10px;
+    white-space: nowrap;
+    position: fixed;
 }
 
+#total-contributions {
+    font-family: inherit;
+    font-size: 12px;
+    color: var(--text-colour);
+    border-width: 0 0 1px 0;
+    border-color: var(--border-colour);
+    border-style: solid;
+    padding: 15px 20px;
+    text-align: right;
+
+}
+
+
 #contribution-grid {
-    height: 185px;
-    width: 1320px;
+    height:max-content;
+    width: max-content;
     display: grid;
     background-color: var(--grid-background);
-    grid-template-rows: repeat(7, 20px);
+    grid-template-rows: repeat(7, 15px);
     grid-auto-flow: column;
-    grid-auto-columns: 20px;
+    grid-auto-columns: 15px;
     gap: 5px;
-    /* overflow-x: auto; */
     border-radius: 10px;
     border-color: var(--border-colour);
     border-width: 1px;
     border-style: solid;
     align-content: center;
-    padding: 0px 10px;
+    justify-items: center;
+    padding: 10px 10px;
+}
+
+#contribution-grid.hidden {
+    display: none;
 }
 
 
 #month-labels-and-contrib-grid {
     overflow-x: auto;
     scrollbar-width: none;
+    margin: 0 30px 0 0;
 }
+
 
 
 #month-labels {
     font-family: inherit;
     font-size: 12px;
-    font-weight: 100;
+    font-weight: 400;
     display: grid;
     grid-auto-flow: column;
-    grid-auto-columns: 20px;
+    grid-auto-columns: 15px;
     column-gap: 5px;
     margin-bottom: 5px;
     color: var(--text-colour);
+    padding: 5px 0 0 0;
 }
 
 
@@ -251,44 +343,117 @@ span {
     width: 0px;
 }
 
+.range {
+    font-family: var(--secondary-font);
+    font-size: 10px;
+    font-weight: 300;
+    padding-inline: 5px;
+}
+
+
+#less-to-more {
+    font-family: inherit;
+    font-size: 12px;
+    color: var(--text-colour);
+    border-width: 1px 0 0 0;
+    border-color: var(--border-colour);
+    border-style: solid;
+    padding: 5px 10px;
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 2px;
+}
 
 [data-level = "0"] {
-    height: 20px;
-    width: 20px;
+    height: 100%;
+    width: 100%;
     background-color: var(--contribution-cell);
     border-radius: 2px;
     box-shadow: 0 0 2px var(--contribution-cell);
 }
 
 [data-level = "1"] {
-    height: 20px;
-    width: 20px;
+    height: 100%;
+    width: 100%;
     background-color: var(--level-1);
     border-radius: 2px;
     box-shadow: 0 0 2px var(--level-1);
 }
 
 [data-level = "2"] {
-    height: 20px;
-    width: 20px;
+    height: 100%;
+    width: 100%;
     background-color: var(--level-2);
     border-radius: 2px;
     box-shadow: 0 0 2px var(--level-2);
 }
 
 [data-level = "3"] {
-    height: 20px;
-    width: 20px;
+    height: 100%;
+    width: 100%;
     background-color: var(--level-3);
     border-radius: 2px;
     box-shadow: 0 0 2px var(--level-3);
 }
 
 [data-level = "4"] {
-    height: 20px;
-    width: 20px;
+    height: 100%;
+    width: 100%;
     background-color: var(--level-4);
     border-radius: 2px;
     box-shadow: 0 0 2px var(--level-4);
+}
+
+.lev-0 {
+    background-color: var(--contribution-cell);
+    height: 10px;
+    width: 10px;
+    border-width: 0.5px;
+    border-style: solid;
+    border-color: var(--contribution-cell);
+    border-radius: 2px;
+}
+
+.lev-1 {
+    background-color: var(--level-1);
+    height: 10px;
+    width: 10px;
+    border-width: 0.5px;
+    border-style: solid;
+    border-color: var(--level-1);
+    border-radius: 2px;
+}
+
+.lev-2 {
+    background-color: var(--level-2);
+    height: 10px;
+    width: 10px;
+    border-width: 0.5px;
+    border-style: solid;
+    border-color: var(--level-2);
+    border-radius: 2px;
+}
+
+.lev-3 {
+    background-color: var(--level-3);
+    height: 10px;
+    width: 10px;
+    border-width: 0.5px;
+    border-style: solid;
+    border-color: var(--level-3);
+    border-radius: 2px;
+}
+
+.lev-4 {
+    background-color: var(--level-4);
+    height: 10px;
+    width: 10px;
+    border-width: 0.5px;
+    border-style: solid;
+    border-color: var(--level-4);
+    border-radius: 2px;
 }
 
