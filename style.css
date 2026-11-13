@@ -47,7 +47,7 @@
     --shadow: #2c2c2c4a;
     --header: #0000;
     --logo-colour:#008000;
-    --hover: #141414;
+    --hover: #046d0052;
 
 }
 
@@ -206,7 +206,7 @@ p.name {
     gap: 7px;
     justify-content: center;
     height: 60%;
-    margin: 45px 10px 0 20px;
+    margin: 35px 10px 0 20px;
     color: var(--text-colour);
 }
 
