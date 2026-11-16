@@ -9,7 +9,7 @@ const darkModeButton = document.querySelector("#light-dark")
 const body = document.querySelector("body")
 const cellToolTip = document.querySelector("#contribution-tooltip")
 const totalContributions = document.querySelector("#total-contributions")
-
+const loadingSign = document.querySelector("#loading")
 
 
 function toggleLightDarkMode() {
@@ -34,6 +34,7 @@ async function generateGraph() {
     
     weekDayLabels.classList.add("hidden")
     contributionGrid.classList.add("hidden")
+    loadingSign.classList.remove("hidden")
 
     contributionGrid.innerHTML = ""
 
@@ -93,6 +94,7 @@ async function generateGraph() {
 
     weekDayLabels.classList.remove("hidden")
     contributionGrid.classList.remove("hidden")
+    loadingSign.classList.add("hidden")
 
     totalContributions.innerHTML = `<span id="contribution-number">${contributions.reduce((sumSoFar, numberInArray) => sumSoFar + numberInArray, 0)}</span> contribution(s)`;
 

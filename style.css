@@ -350,6 +350,11 @@ span.weekday {
     padding-inline: 5px;
 }
 
+#loading {
+    font-family: var(--secondary-font);
+    font-size: 10px;
+    font-weight: 300;
+}
 
 #less-to-more {
     font-family: inherit;
